@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>手工大腸蚵仔麵線</title>
+</head>
+<style>
+body{
+    background-color: rgb(5, 160, 172);
+    color: white;
+    font-weight: bolder;
+}
+div{
+    padding: 30px;
+    font-size: 40px;
+}
+    
+.head{
+    font-size: 60px;
+    font-style: italic;
+    text-shadow: 5px 5px 10px black;
+    text-align: center;
+    border-radius: 30px;
+    background-image:linear-gradient(to right, white, green)
+    
+}
+#price{
+    width:100px;
+}
+#qty{
+    width:50px;
+}
+div label{
+    font-size: 20px;
+    color: white;
+}
+div input, select{
+    font-size: 20px;
+}
+#buttontotal{
+    font-size: 15px;
+    border:none;
+    background-color: pink;
+    border-radius: 5px;
+}
+#buttontotal:hover{
+    cursor: pointer;
+}
+
+div span{
+    font-size: 20px;
+}
+#Total{
+    border: 2px solid bkack;
+}
+
+div #submit{
+    position: absolute;
+    bottom:50px;
+    left: 50%;
+    width: 200px;
+    height: 100px;
+    font-size: 20px;
+    font-weight: bold;
+    color: purple;
+    background-image: radial-gradient(circle, rgb(244, 248, 5), rgb(253, 59, 59));
+    border:none;
+    border-radius: 20px;
+    transition:transform 0.5s ease-in-out;
+}
+#submit:hover{
+    cursor: pointer;
+    transform: scalex(1.2);
+    
+}
+
+
+
+
+
+@media screen and (max-width: 500px) {
+    #header{
+        font-size: 30px;
+    }
+    div{
+      width:12rem;
+      height: 20%;    
+    }
+    div #submit{
+        position: relative;
+        bottom:0px;
+        font-size: 15px;
+        width: 50;
+        height:50px;
+    }
+    #unit{
+      width:50%;
+    }
+}
+</style>
+<body>
+    <h1 id="header" class="head">手工大腸蚵仔麵線</h1>
+    <hr>
+<div>
+    <label for="Dateselect">日期選擇：</label><input type="date" id="Dateselect" name="Dateselect" >
+    <label for="PartNo">料號選擇：</label><input type="text" id="PartNo" name="PartNo" list="PartNo1" >
+    <datalist id="PartNo1">
+        <option value="01-A000-0001">
+        <option value="01-A000-0002">
+        <option value="01-A000-0003">
+        <option value="01-A000-0004">
+        <option value="01-A000-0005">
+        <option value="01-A000-0006">
+        <option value="01-A000-0007">
+        <option value="01-A000-0008">
+        <option value="01-B000-0001">
+        <option value="01-B000-0002">
+        <option value="01-B000-0003">
+        <option value="01-B000-0004">
+        <option value="01-B000-0005">
+        <option value="01-C000-0001">
+        <option value="01-C000-0002">
+        <option value="01-C000-0003">
+        <option value="01-C000-0004">
+        <option value="01-C000-0005">
+        <option value="01-C000-0006">
+        <option value="01-C000-0007">
+        <option value="01-C000-0008">
+        <option value="01-C000-0009">
+        <option value="01-C000-0010">
+        <option value="01-C000-0011">
+        <option value="01-C000-0012">
+        <option value="01-C000-0013">
+        <option value="01-C000-0014">
+        <option value="01-D000-0001">
+        <option value="01-D000-0002">
+        <option value="01-D000-0003">
+        <option value="01-D000-0004">
+        <option value="01-D000-0005">
+        <option value="01-D000-0006">
+        <option value="01-D000-0007">
+        <option value="01-D000-0008">
+        <option value="01-D000-0009">
+        <option value="01-D000-0010">
+        <option value="01-E000-0001">
+        <option value="01-E000-0002">
+        <option value="01-E000-0003">
+        <option value="01-E000-0004">
+    </datalist>
+    <label for="brand">供應商/品牌：</label><input type="text" id="brand" name="brand" list="brand1" >
+    <datalist id="brand1">
+        <option value="傳統市場">
+        <option value="雜貨店">
+        <option value="老公標">
+        <option value="烹大師">
+        <option value="雙魚">
+        <option value="工研">
+        <option value="牛頭牌">
+        <option value="台灣">
+        <option value="台鹽">
+    </div>
+<div>
+    <label for="Item">品名：</label><input type="text" id="Item" name="Item" list="Item1">
+    <datalist id="Item1">
+        <option value="蔥">
+        <option value="香菜">
+        <option value="洋蔥">
+        <option value="薑">
+        <option value="蒜頭">
+        <option value="木耳">
+        <option value="辣椒">
+        <option value="手工麵線">
+        <option value="豬骨">
+        <option value="大腸">
+        <option value="肉羹">
+        <option value="魚丸">
+        <option value="雞蛋">
+        <option value="白胡椒粉">
+        <option value="黑胡椒粉">
+        <option value="雞粉">
+        <option value="太白粉">
+        <option value="地瓜粉">
+        <option value="鰹魚粉">
+        <option value="花生粉">
+        <option value="五香粉">
+        <option value="白沙糖">
+        <option value="冰糖">
+        <option value="味素">
+        <option value="柴魚片">
+        <option value="紅蔥酥">
+        <option value="蒜頭酥">
+        <option value="雙美人黑醬油">
+        <option value="白醬油">
+        <option value="黑醋">
+        <option value="香油">
+        <option value="沙茶醬">
+        <option value="辣豆瓣醬">
+        <option value="米酒">
+        <option value="海鹽">
+        <option value="大蒜泥">
+        <option value="清水">
+        <option value="塑膠袋">
+        <option value="免洗碗大">
+        <option value="免洗碗小">
+        <option value="免洗湯匙">
+
+    </div>
+<div>
+    <label for="price">單價：</label><input type="number" id="price" name="price">
+    <label for="qty">數量：</label><input type="number" id="qty" name="qty" value="1">
+    <button id="buttontotal" onclick="calculateTotal()">計算小計</button><span id="Total">小計：</span>
+
+</div>
+<div>
+    <label for="unit">單位：</label><input type="text" id="unit" name="unit" list="unit1">
+    <datalist id="unit1">
+        <option value="把">
+        <option value="斤">
+        <option value="箱">
+        <option value="克">
+        <option value="c.c">
+        <option value="罐">
+        <option value="瓶">
+        <option value="個">
+    
+</div>
+<div>
+    <button id="submit" onclick="SubmitExcel">上傳到EXCEL</button>
+</div>
+</body>
+<script>
+    // 預設最新日期
+    date = document.getElementById("Dateselect").valueAsDate = new Date();
+    //計算小計按鈕功能
+    function calculateTotal(){
+        let qty = document.getElementById("qty").value;
+        let price = document.getElementById("price").value;
+        let total = qty * price;
+
+        document.getElementById("Total").innerText = "小計：" + total;
+    }
+
+// 輸入料號自動帶入品名跟單位
+document.querySelector("#PartNo").addEventListener("input", function() {
+  var partNo = document.querySelector("#PartNo").value;
+
+  // 移除多餘的閉括號
+  if (partNo === "01-A000-0001") {
+    document.querySelector("#Item").value = "蔥";
+    document.querySelector("#unit").value = "把";
+  } else if (partNo === "01-A000-0002") {
+    document.querySelector("#Item").value = "香菜";
+    document.querySelector("#unit").value = "把";
+  } else if (partNo === "01-A000-0003") {
+    document.querySelector("#Item").value = "洋蔥";
+    document.querySelector("#unit").value = "斤";
+  } else if (partNo === "01-A000-0004") {
+    document.querySelector("#Item").value = "薑";
+    document.querySelector("#unit").value = "斤";
+  } else if (partNo === "01-A000-0005") {
+    document.querySelector("#Item").value = "蒜頭";
+    document.querySelector("#unit").value = "斤";
+  } else if (partNo === "01-A000-0006") {
+    document.querySelector("#Item").value = "木耳";
+    document.querySelector("#unit").value = "斤";
+  } else if (partNo === "01-A000-0007") {
+    document.querySelector("#Item").value = "辣椒";
+    document.querySelector("#unit").value = "斤";
+  } else if (partNo === "01-A000-0008") {
+    document.querySelector("#Item").value = "手工麵線";
+    document.querySelector("#unit").value = "斤";
+  }else if (partNo === "01-B000-0001") {
+    document.querySelector("#Item").value = "豬骨";
+    document.querySelector("#unit").value = "斤";
+  } else if (partNo === "01-B000-0002") {
+    document.querySelector("#Item").value = "大腸";
+    document.querySelector("#unit").value = "斤";
+  } else if (partNo === "01-B000-0003") {
+    document.querySelector("#Item").value = "肉羹";
+    document.querySelector("#unit").value = "斤";
+  } else if (partNo === "01-B000-0004") {
+    document.querySelector("#Item").value = "魚丸";
+    document.querySelector("#unit").value = "斤";
+  } else if (partNo === "01-BA000-0005") {
+    document.querySelector("#Item").value = "雞蛋";
+    document.querySelector("#unit").value = "箱";
+  } else if (partNo === "01-C000-0001") {
+    document.querySelector("#Item").value = "白胡椒粉";
+    document.querySelector("#unit").value = "克";
+  } else if (partNo === "01-C000-0002") {
+    document.querySelector("#Item").value = "黑胡椒粉";
+    document.querySelector("#unit").value = "克";
+  } else if (partNo === "01-C000-0003") {
+    document.querySelector("#Item").value = "雞粉";
+    document.querySelector("#unit").value = "克";
+  } else if (partNo === "01-C000-0004") {
+    document.querySelector("#Item").value = "太白粉";
+    document.querySelector("#unit").value = "斤";
+  }else if (partNo === "01-C000-0005") {
+    document.querySelector("#Item").value = "地瓜粉";
+    document.querySelector("#unit").value = "斤";
+  }else if (partNo === "01-C000-0006") {
+    document.querySelector("#Item").value = "鰹魚粉";
+    document.querySelector("#unit").value = "克";
+  }else if (partNo === "01-C000-0007") {
+    document.querySelector("#Item").value = "花生粉";
+    document.querySelector("#unit").value = "克";
+  }else if (partNo === "01-C000-0008") {
+    document.querySelector("#Item").value = "五香粉";
+    document.querySelector("#unit").value = "克";
+  }else if (partNo === "01-C000-0009") {
+    document.querySelector("#Item").value = "白沙糖";
+    document.querySelector("#unit").value = "斤";
+  }else if (partNo === "01-C000-0010") {
+    document.querySelector("#Item").value = "冰糖";
+    document.querySelector("#unit").value = "斤";
+  }else if (partNo === "01-C000-0011") {
+    document.querySelector("#Item").value = "味素";
+    document.querySelector("#unit").value = "克";
+  }else if (partNo === "01-C000-0012") {
+    document.querySelector("#Item").value = "柴魚片";
+    document.querySelector("#unit").value = "克";
+  }else if (partNo === "01-C000-0013") {
+    document.querySelector("#Item").value = "紅蔥酥";
+    document.querySelector("#unit").value = "斤";
+  }else if (partNo === "01-C000-0014") {
+    document.querySelector("#Item").value = "蒜頭酥";
+    document.querySelector("#unit").value = "斤";
+  }else if (partNo === "01-D000-0001") {
+    document.querySelector("#Item").value = "雙美人黑醬油";
+    document.querySelector("#unit").value = "c.c";
+  }else if (partNo === "01-D000-0002") {
+    document.querySelector("#Item").value = "白醬油";
+    document.querySelector("#unit").value = "c.c";
+  }else if (partNo === "01-D000-0003") {
+    document.querySelector("#Item").value = "黑醋";
+    document.querySelector("#unit").value = "c.c";
+  }else if (partNo === "01-D000-0004") {
+    document.querySelector("#Item").value = "香油";
+    document.querySelector("#unit").value = "c.c";
+  }else if (partNo === "01-D000-0005") {
+    document.querySelector("#Item").value = "沙茶醬";
+    document.querySelector("#unit").value = "罐";
+  }else if (partNo === "01-D000-0006") {
+    document.querySelector("#Item").value = "辣豆瓣醬";
+    document.querySelector("#unit").value = "罐";
+  }else if (partNo === "01-D000-0007") {
+    document.querySelector("#Item").value = "米酒";
+    document.querySelector("#unit").value = "瓶";
+  }else if (partNo === "01-D000-0008") {
+    document.querySelector("#Item").value = "海鹽";
+    document.querySelector("#unit").value = "克";
+  }else if (partNo === "01-D000-0009") {
+    document.querySelector("#Item").value = "大蒜泥";
+    document.querySelector("#unit").value = "克";
+  }else if (partNo === "01-D000-0010") {
+    document.querySelector("#Item").value = "清水";
+    document.querySelector("#unit").value = "c.c";
+  }else if (partNo === "01-E000-0001") {
+    document.querySelector("#Item").value = "塑膠袋";
+    document.querySelector("#unit").value = "個";
+  }else if (partNo === "01-E000-0002") {
+    document.querySelector("#Item").value = "免洗碗大";
+    document.querySelector("#unit").value = "個";
+  }else if (partNo === "01-E000-0003") {
+    document.querySelector("#Item").value = "免洗碗小";
+    document.querySelector("#unit").value = "個";
+  }else if (partNo === "01-E000-0004") {
+    document.querySelector("#Item").value = "免洗湯匙";
+    document.querySelector("#unit").value = "個";
+  }
+});
+
+document.querySelector("#Item").addEventListener("input", function() {
+  var item = document.querySelector("#Item").value;
+  if (item === "蔥") {
+    document.querySelector("#PartNo").value = "01-A000-0001";
+    document.querySelector("#unit").value = "把";
+  } else if (item === "香菜") {
+    document.querySelector("#PartNo").value = "01-A000-0002";
+    document.querySelector("#unit").value = "把";
+  }else if (item === "洋蔥") {
+    document.querySelector("#PartNo").value = "01-A000-0003";
+    document.querySelector("#unit").value = "斤";
+  } else if (item === "薑") {
+    document.querySelector("#PartNo").value = "01-A000-0004";
+    document.querySelector("#unit").value = "斤";
+  } else if (item === "蒜頭") {
+    document.querySelector("#PartNo").value = "01-A000-0005";
+    document.querySelector("#unit").value = "斤";
+  } else if (item === "木耳") {
+    document.querySelector("#PartNo").value = "01-A000-0006";
+    document.querySelector("#unit").value = "斤";
+  } else if (item === "辣椒") {
+    document.querySelector("#PartNo").value = "01-A000-0007";
+    document.querySelector("#unit").value = "斤";
+  } else if (item === "手工麵線") {
+    document.querySelector("#PartNo").value = "01-A000-0008";
+    document.querySelector("#unit").value = "斤";
+  } else if (item === "豬骨") {
+    document.querySelector("#PartNo").value = "01-B000-0001";
+    document.querySelector("#unit").value = "斤";
+  } else if (item === "大腸") {
+    document.querySelector("#PartNo").value = "01-B000-0002";
+    document.querySelector("#unit").value = "斤";
+  } else if (item === "肉羹") {
+    document.querySelector("#PartNo").value = "01-B000-0003";
+    document.querySelector("#unit").value = "斤";
+  } else if (item === "魚丸") {
+    document.querySelector("#PartNo").value = "01-B000-0004";
+    document.querySelector("#unit").value = "斤";
+  } else if (item === "雞蛋") {
+    document.querySelector("#PartNo").value = "01-B000-0005";
+    document.querySelector("#unit").value = "箱";
+  } else if (item === "白胡椒粉") {
+    document.querySelector("#PartNo").value = "01-C000-0001";
+    document.querySelector("#unit").value = "克";
+  } else if (item === "黑胡椒粉") {
+    document.querySelector("#PartNo").value = "01-C000-0002";
+    document.querySelector("#unit").value = "克";
+  } else if (item === "雞粉") {
+    document.querySelector("#PartNo").value = "01-C000-0003";
+    document.querySelector("#unit").value = "克";
+  } else if (item === "太白粉") {
+    document.querySelector("#PartNo").value = "01-C000-0004";
+    document.querySelector("#unit").value = "斤";
+  } else if (item === "地瓜粉") {
+    document.querySelector("#PartNo").value = "01-C000-0005";
+    document.querySelector("#unit").value = "斤";
+  } else if (item === "鰹魚粉") {
+    document.querySelector("#PartNo").value = "01-C000-0006";
+    document.querySelector("#unit").value = "克";
+  }else if (item === "花生粉") {
+    document.querySelector("#PartNo").value = "01-C000-0007";
+    document.querySelector("#unit").value = "克";
+  } else if (item === "五香粉") {
+    document.querySelector("#PartNo").value = "01-C000-0008";
+    document.querySelector("#unit").value = "克";
+  } else if (item === "白沙糖") {
+    document.querySelector("#PartNo").value = "01-C000-0009";
+    document.querySelector("#unit").value = "斤";
+  } else if (item === "冰糖") {
+    document.querySelector("#PartNo").value = "01-C000-0010";
+    document.querySelector("#unit").value = "斤";
+  } else if (item === "味素") {
+    document.querySelector("#PartNo").value = "01-C000-0011";
+    document.querySelector("#unit").value = "克";
+  } else if (item === "柴魚片") {
+    document.querySelector("#PartNo").value = "01-C000-0012";
+    document.querySelector("#unit").value = "克";
+  } else if (item === "紅蔥酥") {
+    document.querySelector("#PartNo").value = "01-C000-0013";
+    document.querySelector("#unit").value = "斤";
+  } else if (item === "蒜頭酥") {
+    document.querySelector("#PartNo").value = "01-C000-0014";
+    document.querySelector("#unit").value = "斤";
+  } else if (item === "雙美人黑醬油") {
+    document.querySelector("#PartNo").value = "01-D000-0001";
+    document.querySelector("#unit").value = "c.c";
+  } else if (item === "白醬油") {
+    document.querySelector("#PartNo").value = "01-D000-0002";
+    document.querySelector("#unit").value = "c.c";
+  } else if (item === "黑醋") {
+    document.querySelector("#PartNo").value = "01-D000-0003";
+    document.querySelector("#unit").value = "c.c";
+  } else if (item === "香油") {
+    document.querySelector("#PartNo").value = "01-D000-0004";
+    document.querySelector("#unit").value = "c.c";
+  } else if (item === "沙茶醬") {
+    document.querySelector("#PartNo").value = "01-D000-0005";
+    document.querySelector("#unit").value = "罐";
+  } else if (item === "辣豆瓣醬") {
+    document.querySelector("#PartNo").value = "01-D000-0006";
+    document.querySelector("#unit").value = "罐";
+  } else if (item === "米酒") {
+    document.querySelector("#PartNo").value = "01-D000-0007";
+    document.querySelector("#unit").value = "瓶";
+  } else if (item === "海鹽") {
+    document.querySelector("#PartNo").value = "01-D000-0008";
+    document.querySelector("#unit").value = "克";
+  } else if (item === "大蒜尼") {
+    document.querySelector("#PartNo").value = "01-D000-0009";
+    document.querySelector("#unit").value = "克";
+  } else if (item === "清水") {
+    document.querySelector("#PartNo").value = "01-D000-0010";
+    document.querySelector("#unit").value = "c.c";
+  } else if (item === "塑膠袋") {
+    document.querySelector("#PartNo").value = "01-E000-0001";
+    document.querySelector("#unit").value = "個";
+  } else if (item === "免洗碗大") {
+    document.querySelector("#PartNo").value = "01-E000-0002";
+    document.querySelector("#unit").value = "個";
+  } else if (item === "免洗碗小") {
+    document.querySelector("#PartNo").value = "01-E000-0003";
+    document.querySelector("#unit").value = "個";
+  } else if (item === "免洗湯匙") {
+    document.querySelector("#PartNo").value = "01-E000-0004";
+    document.querySelector("#unit").value = "個";
+  } 
+});
+// 所有需要檢查空值的欄位ID
+const inputFields = ["PartNo", "brand", "Item", "price", "qty", "unit"];
+// 中文欄位名稱對應表
+const fieldChineseNames = {
+  PartNo: "料號",  
+  brand: "供應商/品牌",
+  Item: "品名",
+  price:"單價",
+  qty:"數量",
+  unit: "單位",
+};
+
+function checkRequiredFields() {
+  for (const fieldId of inputFields) {
+    const fieldValue = document.querySelector(`#${fieldId}`).value.trim();
+    if (fieldValue === "") {
+        alert(`${fieldChineseNames[fieldId]}欄位是空的！`);
+      return false; // 阻止後續操作
+    }
+  }
+  return true; // 所有欄位都填寫了，允許後續操作
+}
+// 在需要檢查空值時呼叫 checkRequiredFields() 函式
+// 例如：在提交表單前檢查
+document.querySelector("#submit").addEventListener("click", function() {
+  if (!checkRequiredFields()) {
+    return; // 阻止表單提交
+  }
+  // 所有欄位都填寫了，允許表單提交
+  alert(`上傳成功!`)
+});
+
+</script>
+</html>
