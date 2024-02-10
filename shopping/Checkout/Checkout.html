@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>結帳</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="/home.html" class="logo"><i class="fa fa-sharp fa-solid fa-shop"></i>首頁</a>
+        <h2>結帳</h2>
+    </header>
+    <section>
+        <div class="cart">
+            <ul class="list" id="list"></ul>
+            <div class="buytotal">
+                <p><span class="total" id="total"></span></p>
+                <p><span class="quantity" id="quantity"></span></p>
+            </div>
+        </div>
+        <div >
+            <form action="#">
+                <input type="text" id="name" placeholder="姓名">
+                <input type="number" id="phone" placeholder="電話號碼">
+                <input type="email" id="email" placeholder="聯絡信箱">
+                <input type="text" id="address" placeholder="地址">
+                
+
+                <div class="credit-card">
+                    <label for="option1">
+                    <input type="radio" name="pay" id="option1" value="">信用卡付款</label>
+                    <i class="fa fa-brands fa-cc-visa" style="color: blue;"></i>
+                    <i class="fa fa-brands fa-cc-paypal" style="color: red;"></i>
+                    <label for="option2">
+                    <input type="radio" name="pay" id="option2" value="">貨到付款</label>
+                    <input type="submit" value="下訂單">
+                </div>
+                <input type="text" id="address" placeholder="信用卡卡號">
+            </form>
+        </div>
+            <button class="buybtn" id="checkout">結帳</button>
+    </section>
+    <script src="demo2.js"></script>
+</body>
+</html>
