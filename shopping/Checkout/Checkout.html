@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>結帳</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="/home.html" class="logo"><i class="fa fa-sharp fa-solid fa-shop"></i>首頁</a>
+        <h2>結帳</h2>
+    </header>
+    <!-- 購物車內容 -->
+    <section>
+        <div class="cart">
+            <ul class="list" id="list"></ul>
+            <div class="buytotal">
+                <p><span class="total" id="total"></span></p>
+                <p><span class="quantity" id="quantity"></span></p>
+            </div>
+        </div>
+    </section>
+    <!-- 付款資訊 -->
+    <div class="orderform">
+        <form action="#">
+            <div class="credit-card">
+                <label for="option1" class="payment-option">
+                    <input type="radio" name="pay" id="option1" value="">
+                    <i class="fa fa-sharp fa-solid fa-circle-check" ></i> 信用卡付款
+                    <i class="fa fa-brands fa-cc-visa" style="color: blue;"></i>
+                    <i class="fa fa-brands fa-cc-paypal" style="color: red;"></i>
+                  </label>
+                <label for="option2" class="payment-option">
+                    <input type="radio" name="pay" id="option2" value="">
+                    <i class="fa fa-sharp fa-solid fa-circle-check"></i> 貨到付款
+                </label>
+            </div>
+            <div class="credit-input">
+                <div class="three-input">
+                    <input type="text" id="name" placeholder="姓名">
+                    <input type="number" id="phone" placeholder="電話號碼">
+                    <input type="email" id="email" placeholder="聯絡信箱">
+                </div>
+                <input type="text" id="address" placeholder="地址">
+                <input type="text" id="cardnumber" placeholder="信用卡卡號">
+                <textarea id="notes" placeholder="備註"></textarea>
+            </div>
+            <input type="submit" class="order-submit" value="下訂單">
+        </form>
+    </div>
+        <button class="buybtn" id="checkout">結帳</button>
+    <!-- 檢查付款 -->
+    <div class="payment OK" id="paymentOK" style="display: none;">
+        <i class="fa fa-sharp fa-solid fa-circle-check"></i>
+        <span>下單成功！</span>
+    </div>
+    <div class="payment NO" id="paymentNO" style="display: none;">
+        <i class="fa fa-sharp fa-solid fa-circle-exclamation"></i>
+        <span>下單失敗，有資料未填寫！</span>
+    </div>
+    <script src="demo2.js"></script>
+</body>
+</html>
