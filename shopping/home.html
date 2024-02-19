@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>購物網站</title>
+    <link rel="stylesheet" href="style1.css">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- 網站圖標 -->
+    <link rel="icon" href="image/favicon.ico">
+    
+</head>
+<body>
+    <!-- 導覽列 -->
+    <header class="head">
+        <a href="#home" class="logo"><i class="fa fa-sharp fa-solid fa-shop"></i></a>
+
+        <ul class="navbar">
+            <li><a href="#home">首頁</a></li>
+            <li><a href="#new">新產品</a></li>
+            <li><a href="#product">所有產品</a></li>
+        </ul>
+
+        <div class="header-icons">
+            <i class="fa fa-sharp fa-solid fa-magnifying-glass" id="search-icon"></i>
+            <i class="fa fa-sharp fa-solid fa-cart-plus" id="cart-icon"></i>
+            <span class="quantity">0</span>
+            <i class="fa fa-sharp fa-solid fa-user" id="user-icon"></i>
+            <i class="fa fa-sharp fa-solid fa-bars" id="menu-icon"></i>
+        </div>
+
+        <!-- 收尋欄 -->
+        <div class="search-box">
+            <input type="search" id="search" name="search" placeholder="請輸入物品名稱">
+        </div>
+        <!-- 購物車 -->
+        <div class="cart">
+            <h2>購物車</h2>
+            <ul class="listCart"></ul>
+            <p onclick="window.location.href='Checkout/Checkout.html'">點我結帳</p>
+            <div class="checkOut">
+                <div class="total">總計： $0</div>
+                <div class="closeCart">關閉</div>
+            </div>    
+        </div>
+        <!-- 使用者登入 -->
+        <div class="user">
+            <div class="user-log" id="user-login-container">
+                <h2>請登入</h2>
+                <form action="#">
+                    <input type="email" placeholder="您的電子信箱" class="email" autocomplete="email">
+                    <span class="error email-error">
+                        <i class="fa fa-sharp fa-solid fa-triangle-exclamation"></i>
+                        <p class="error-text">您輸入的信箱錯誤!</p>
+                    </span>
+                        <input type="password" placeholder="請輸入密碼" class="password" autocomplete="new-password">
+                        <i class="fa fa-sharp fa-solid fa-eye-slash"></i>
+                    <span class="error password-error">
+                        <i class="fa fa-sharp fa-solid fa-triangle-exclamation"></i>
+                        <p class="error-text">請輸入英文加數字至少8位數!</p>
+                    </span>
+                    <input type="submit" value="登入" class="login-btn">
+                </form>
+                <p><a href="#registration">註冊帳號</a></p>
+            </div>
+        <!-- 註冊帳號 -->
+             <div class="new-user">
+                <h2>註冊帳號</h2>
+                    <form action="#">
+                    <input type="email" placeholder="您的電子信箱" class="email" autocomplete="email">
+                    <span class="error email-error">
+                        <i class="fa fa-sharp fa-solid fa-triangle-exclamation"></i>
+                        <p class="error-text">您輸入的格式錯誤!</p>
+                    </span>
+                    <div class="otpverify">
+                        <button class="btn1" id="otp-btn" onclick="sendOTP()">取得驗證碼</button>
+                        <input type="text" id="otp-inp" placeholder="請輸入驗證碼" autocomplete="username">
+                    </div>
+                        <input type="password" placeholder="請輸入密碼" class="password" autocomplete="new-password">
+                        <i class="fa fa-sharp fa-solid fa-eye-slash"></i>
+                    <span class="error password-error">
+                        <i class="fa fa-sharp fa-solid fa-triangle-exclamation"></i>
+                        <p class="error-text">請輸入英文加數字至少8位數!</p>
+                    </span>
+                        <input type="password" placeholder="請再次輸入密碼" class="cpassword" autocomplete="new-password">
+                    <span class="error cpassword-error">
+                        <i class="fa fa-sharp fa-solid fa-triangle-exclamation"></i>
+                        <p class="error-text">密碼不一致!</p>
+                    </span>
+                    
+                    <input type="submit" value="註冊" class="sign-btn">
+                    <p><a href="#registration" class="sign-login">登入帳號</a></p>
+                </form>
+            </div>
+        </div>
+    </header>
+    <!-- 首頁 -->
+    <section class="home" id="home">
+        <div class="home-text">
+            <span>購買GO</span>
+            <h1>各種好物上市</h1>
+            <a href="#product" class="btn">現在購買!</a>
+        </div>
+        <div class="home-img">
+            <img src="image/shop.png" alt="shop">
+        </div>
+    </section>
+    <!-- 新產品 -->
+    <section class="new" id="new">
+        <div class="heading">
+            <h1>新產品</h1>
+        </div>
+        <div class="swiper new-arrival">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide box">
+                    <div class="img">
+                    <img src="image/foot.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h2>番茄披薩</h2>
+                        <p>新鮮、美味、帶有意大利風情的番茄披薩，是披薩愛好者的絕佳選擇。
+                            每一口都充滿了新鮮熟成的番茄風味，搭配口感鬆軟的披薩餅皮和豐富的配料
+                            ，讓您感受到地道的義大利風情。</p>
+                        <a href="#new" class="btn" data-id="0">購買</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                    <img src="image/foot1.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h2>海鮮披薩</h2>
+                        <p>
+                            海鮮披薩的主要特點是使用新鮮的海鮮作為配料。
+                            以其新鮮、豐富、健康的特點，
+                            以及特有的地中海風味，成為披薩界中的一個受歡迎且獨特的品種。
+                        </p>
+                        <a href="#new" class="btn" data-id="1">購買</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                    <img src="image/shirt1.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h2>白色T-shirt</h2>
+                        <p>
+                            白色 T 恤通常呈簡單的圓領或 V 領設計，袖口和衣身簡單而舒適。這種基本的風格使它成為許多人日常穿著的理想選擇。
+                            可以搭配各種不同的下身服裝，例如牛仔褲、長裙、短褲等，適合各種場合。
+                        </p>
+                        <a href="#new" class="btn" data-id="5">購買</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <!-- 所有產品 -->
+    <section class="product" id="product">
+        <div class="heading">
+            <h1>所有產品</h1>
+        </div>
+        <div class="product-container">
+            <div class="list"></div>
+    </div>
+    </section>
+    <!-- 最底層頁尾 -->
+    <section class="footer" id="footer">
+        <p>關於我</p>
+        <hr>
+        <div class="social">
+            <a href="#"><i class="fa fa-brands fa-youtube" style="color: red;"></i></a>
+            <a href="#"><i class="fa fa-brands fa-facebook" style="color: blue;"></i></a>
+            <a href="#"><i class="fa fa-brands fa-twitter" style="color: lightblue;"></i></a>
+            <a href="#"><i class="fa fa-brands fa-instagram" style="color: red;"></i></a>
+            <a href="#"><i class="fa fa-brands fa-discord" style="color: white;"></i></a>
+        </div>
+        <h1 class="credit">私人作品<span>僅供展示個人作品用</span></h1>
+    </section>
+</body>
+<!-- 信箱驗證smtpjs -->
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<!-- swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="demo.js"></script>
+<script src="ShoppingCart.js"></script>
+</html>
